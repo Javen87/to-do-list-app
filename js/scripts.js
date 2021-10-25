@@ -5,7 +5,7 @@ function newItem(){
 
     //Conditional to check for value and add to ordered list  
     if(inputValue === ''){
-        alert('Cant be empty!');
+        alert('You must write something!');
     }
     else{
         $('#list').append(li);
@@ -25,12 +25,14 @@ function newItem(){
     crossOutButton.append(document.createTextNode('x'));
     li.append(crossOutButton);
 
-    //crossOut
+    //Function to delete list items
     function deleteListItem(){
         li.addClass('delete');
     }
 
+    //Add event to delete list item when 'X' is clicked 
     crossOutButton.on('click', deleteListItem);
 
+    //Method to be able to re-order list items
     $('#list').sortable();
 }
